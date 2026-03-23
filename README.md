@@ -30,7 +30,7 @@ This plugin addresses all of the above.
 - **Pause and resume** - when the built-in tracer stops, the plugin trace session stays active in a paused state. Click **Continue Tracing** to resume recording into the same file, or **Finish Trace** to end the session. This allows setting breakpoints mid-trace without splitting the output into multiple files.
 - **Finish trace at first stop** - when enabled (default), the trace session ends automatically the moment the debugger stops (e.g. at a breakpoint), without requiring a manual click on **Finish Trace**. Disable this option to use the pause/resume workflow instead.
 - **Settings persistence** - plugin settings and per-module filter configuration are saved and restored. Filter settings are matched to the current module list: if the loaded modules match a saved configuration, that configuration is applied automatically.
-- **No trace size limit.**
+- **No trace size limit**
 
 ## When to use this instead of the built-in tracer
 
@@ -84,9 +84,8 @@ To capture such calls, enable **Log calls in skipped modules** in the plugin win
 
 ## Requirements
 
-- Windows x64
-- x64dbg (tested on the **August 19, 2025** snapshot, x64 build)
-- Tested on Windows 10 22H2
+- Windows 10-11 x64 (tested on Windows 10 22H2)
+- x64dbg (tested on the **August 19, 2025** snapshot)
 - Visual Studio 2022 (for MSVC compiler)
 - CMake 3.15 or later
 
@@ -147,8 +146,7 @@ Copy `ExtendedTrace.dp64` to the `plugins` folder inside your x64dbg directory. 
 2. Navigate to **Plugins → ExtendedTrace → Extended Trace Window** to open the plugin UI.
 3. Configure:
    - Output folder for the JSONL file and module dumps.
-   - Skip behavior (Step Over / Silent). **Silent is recommended** - it is more stable than Step Over and still significantly faster than the built-in Trace Into.
-   - Whether to skip system modules.
+   - Skip behavior (Step Over / Silent).
    - Whether to log calls in skipped modules (Silent mode only) - see [Calls inside skipped modules](#calls-inside-skipped-modules).
    - Whether to dump traced modules at the end.
    - Which user modules to skip.
@@ -171,7 +169,3 @@ Settings are saved immediately when changed.
 - [x64dbg](https://github.com/x64dbg/x64dbg) - debugger and plugin SDK
 - [x64dbg PluginTemplate](https://github.com/x64dbg/PluginTemplate) - CMake project template used as a base
 - [Scylla](https://github.com/NtQuery/Scylla) - PE dumping code referenced for module dump implementation
-
-## Version
-
-1.0
