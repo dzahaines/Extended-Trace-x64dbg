@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Except these
+!LICENSE
+!.gitignore
+!README.md
+!CMakeLists.txt
+!src/
+!src/**
+!.vscode/
+!.vscode/**
+!pics/
+!pics/**
