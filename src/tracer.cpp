@@ -710,6 +710,22 @@ void Tracer::BuildRegsJson(const REGISTERCONTEXT_AVX512& regs, std::string& out)
             out += "\"}";
         }
     }
+
+    char xmmBuf[128];
+    for (int i = 0; i < 16; i++)
+    {
+        const XMMREGISTER& xmm = reinterpret_cast<const XMMREGISTER&>(regs.ZmmRegisters[i]);
+        if (xmm.Low == 0 && xmm.High == 0)
+            continue;
+
+        if (!first)
+            out += ",";
+        first = false;
+
+        snprintf(xmmBuf, sizeof(xmmBuf), "\"xmm%d\":\"0x%016llX%016llX\"",
+            i, (unsigned long long)xmm.High, (unsigned long long)xmm.Low);
+        out += xmmBuf;
+    }
 }
 
 

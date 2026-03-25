@@ -6,7 +6,7 @@ set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "")
 set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "/DEBUG:FULL /INCREMENTAL:NO" CACHE STRING "")
 set(CMAKE_BUILD_TYPE "Release" CACHE STRING "")
 
-project(ExtendedTrace)
+project(ExtendedTrace VERSION 1.1.0)
 
 add_library(ExtendedTrace SHARED
     src/pluginmain.cpp

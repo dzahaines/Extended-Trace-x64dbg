@@ -55,7 +55,7 @@ Fields:
 - `ip` - instruction address
 - `raw` - raw bytes (hex)
 - `dis` - disassembly text
-- `regs` - register values; zero-valued registers are omitted; if a register points to a readable ASCII or wide string (min 4 chars), the value is `{"value":"0x...","string":"..."}`
+- `regs` - register values (general-purpose and XMM); zero-valued registers are omitted; if a general-purpose register points to a readable ASCII or wide string (min 4 chars), the value is `{"value":"0x...","string":"..."}`. XMM registers are output as 128-bit hex strings.
 - `flags` - eflags
 - `extra` - present on call instructions when the target has a resolvable name (see below)
 

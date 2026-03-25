@@ -4,7 +4,10 @@
 #error You need to define PLUGIN_NAME
 #endif
 
-#define PLUGIN_VERSION 1
+#define PLUGIN_VERSION_MAJOR 1
+#define PLUGIN_VERSION_MINOR 1
+#define PLUGIN_VERSION_PATCH 0
+#define PLUGIN_VERSION ((PLUGIN_VERSION_MAJOR * 10000) + (PLUGIN_VERSION_MINOR * 100) + PLUGIN_VERSION_PATCH)
 
 #include "pluginsdk/bridgemain.h"
 #include "pluginsdk/_plugins.h"
